@@ -42,11 +42,17 @@ TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a75
 # Audio
 AUDIO_FEATURE_ENABLED_DLKM := true
 AUDIO_FEATURE_ENABLED_DTS_EAGLE := false
+AUDIO_FEATURE_ENABLED_EXTENDED_COMPRESS_FORMAT := true
 AUDIO_FEATURE_ENABLED_GEF_SUPPORT := true
 AUDIO_FEATURE_ENABLED_HW_ACCELERATED_EFFECTS := false
 AUDIO_FEATURE_ENABLED_INSTANCE_ID := true
 AUDIO_FEATURE_ENABLED_PAL_HIDL := true
 AUDIO_FEATURE_ENABLED_PROXY_DEVICE := true
+$(call soong_config_set,qtiaudio,feature_disabled_dts_eagle,true)
+$(call soong_config_set,qtiaudio,feature_gef_support,true)
+$(call soong_config_set,qtiaudio,feature_instance_id,true)
+$(call soong_config_set,qtiaudio,feature_pal_hidl,true)
+$(call soong_config_set,qtiaudio,feature_extended_compress_format,true)
 
 BOARD_SUPPORTS_OPENSOURCE_STHAL := true
 
