@@ -27,3 +27,8 @@ set_prop(hal_camera_default, vendor_camera_sensor_prop)
 
 dontaudit hal_camera graphics_device:dir search;
 dontaudit hal_camera_default default_prop:file read;
+dontaudit hal_camera_default shell_data_file:dir search;
+dontaudit hal_camera_default system_prop:file { read getattr map open };
+
+type vendor_camera_aiie_prop, property_type, vendor_property_type;
+set_prop(hal_camera_default, vendor_camera_aiie_prop)
