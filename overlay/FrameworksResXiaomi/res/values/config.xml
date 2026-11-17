@@ -231,6 +231,7 @@
     </integer-array>
 
     <!-- Default refresh rate in the zone defined by brightness and ambient thresholds.
-         If non-positive, then the refresh rate is unchanged even if thresholds are configured. -->
-    <integer name="config_defaultRefreshRateInZone">120</integer>
+         If non-positive, then the refresh rate is unchanged even if thresholds are configured.
+         Set to 0 so dynamic refresh rate keeps working at low brightness (no 120Hz lock). -->
+    <integer name="config_defaultRefreshRateInZone">0</integer>
 </resources>
