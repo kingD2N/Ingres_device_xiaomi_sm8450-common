@@ -218,10 +218,12 @@
          non-zero. -->
     <integer name="config_defaultPeakRefreshRate">120</integer>
 
-    <!-- Low zone brightness thresholds in the range [0, 255] -->
+    <!-- Low zone brightness thresholds in the range [0, 255].
+         Kept very low (about the dimmest 15-20% of the slider) so the panel is only held at
+         120Hz where 60Hz would flicker; dynamic refresh rate works above that. -->
     <integer-array name="config_brightnessThresholdsOfPeakRefreshRate" translatable="false">
-        <item>7</item>
-        <item>11</item>
+        <item>2</item>
+        <item>4</item>
     </integer-array>
 
     <!-- Low zone lux thresholds -->
@@ -232,6 +234,6 @@
 
     <!-- Default refresh rate in the zone defined by brightness and ambient thresholds.
          If non-positive, then the refresh rate is unchanged even if thresholds are configured.
-         Set to 0 so dynamic refresh rate keeps working at low brightness (no 120Hz lock). -->
-    <integer name="config_defaultRefreshRateInZone">0</integer>
+         Hold 120Hz inside the (narrow) low zone to avoid low-brightness flicker at 60Hz. -->
+    <integer name="config_defaultRefreshRateInZone">120</integer>
 </resources>
